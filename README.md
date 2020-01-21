@@ -59,3 +59,10 @@ ActiveRecord::Base.logger = nil
 ```
 
 # I am adding a new file
+
+# As a user, I should be able to view all parks in alphabetical order
+# As as user, I should be able to assign tags to parks
+# As a user, I should be able to search parks by tag
+# As a user, I should be able to search parks by state
+# As a user, I should be able to update tags
+# As a user, I should be able to delete tags 
