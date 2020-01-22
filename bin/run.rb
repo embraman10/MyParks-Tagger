@@ -1,12 +1,13 @@
 require_relative '../config/environment'
 require 'pry'
+ActiveRecord::Base.logger = nil
 
 def clear_screen
-    puts "\e[H\e[2J"
+  puts "\e[H\e[2J"
 end
 
 clear_screen
-puts "Welcome to My Parks Tagger!"
+puts "Welcome to MyParks Tagger!"
 
 if user_choice == "1"
     display_alphabetical_parks

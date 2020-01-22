@@ -14,15 +14,15 @@ ActiveRecord::Schema.define(version: 3) do
 
   create_table "parks", force: :cascade do |t|
     t.string "name"
-    t.string "states"
-    t.string "description"
-    t.string "weatherInfo"
+    t.string "state"
+    t.text   "description"
+    t.string "weather"
     t.string "url"
   end
 
   create_table "tag_assignments", force: :cascade do |t|
-    t.integer "parks_id"
-    t.integer "tags_id"
+    t.integer "park_id"
+    t.integer "tag_id"
   end
 
   create_table "tags", force: :cascade do |t|
