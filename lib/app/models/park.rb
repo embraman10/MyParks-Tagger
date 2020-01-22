@@ -15,7 +15,8 @@ class Park < ActiveRecord::Base
     end
 
     def self.names_by_alpha
-        self.order(:name)
+        ordered = self.order(:name)
         ordered.map(&:name)
     end
+
 end
