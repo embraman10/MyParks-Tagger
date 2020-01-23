@@ -4,18 +4,23 @@ class Park < ActiveRecord::Base
 
     def list_display
         <<~PARK_DEETS
-        -----------------------------------
-            Name: #{self.name}
-            State: #{self.states}
-            Description: #{self.description[0..120]}
-            Weather: #{self.weatherInfo}
-            Visit website: #{self.url}
-        ------------------------------------
+        --~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~--
+            Name: #{self.name}\n
+            State: #{self.state}\n
+            Description: #{self.description}\n
+            Weather: #{self.weather}\n
+            Visit website: #{self.url}\n
+        --~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~--
         PARK_DEETS
     end
 
     def self.names_by_alpha
         ordered = self.order(:name)
+        ordered.map(&:name)
+    end
+
+    def self.find_by_name
+        ordered = self.find_by(:name)
         ordered.map(&:name)
     end
 
