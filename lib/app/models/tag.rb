@@ -9,15 +9,9 @@ class Tag < ActiveRecord::Base
         ordered.map(&:name)
     end
 
-    def self.find_or_create_by(user_selection)
-        Tag.find_by(name: user_selection) ||  Tag.create(name: user_selection)
-    end
-
     def self.delete_tag(user_selection)
-        Tag.find_by(name: user_selection)
-        Tag.user_selection.destroy
+        tag_to_destroy = Tag.find_by(name: user_selection)
+        tag_to_destroy.destroy
     end
 
-    # Tag.find_by(name: ).parks
-    
 end

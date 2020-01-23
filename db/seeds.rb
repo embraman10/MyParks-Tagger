@@ -61,7 +61,6 @@ TagAssignment.create(park: Park.find_by(name: "Crater Lake National Park"), tag:
 TagAssignment.create(park: Park.find_by(name: "Crater Lake National Park"), tag: Tag.find_by(name: "difficult hikes"))
 TagAssignment.create(park: Park.find_by(name: "Glacier National Park"), tag: Tag.find_by(name: "mountainous"))
 TagAssignment.create(park: Park.find_by(name: "Glacier National Park"), tag: Tag.find_by(name: "difficult hikes"))
-TagAssignment.create(park: Park.find_by(name: "Glacier National Park"), tag: Tag.find_by(name: "mountainous"))
 TagAssignment.create(park: Park.find_by(name: "Glacier National Park"), tag: Tag.find_by(name: "waterfalls"))
 TagAssignment.create(park: Park.find_by(name: "Glacier National Park"), tag: Tag.find_by(name: "lots of wildlife"))
 TagAssignment.create(park: Park.find_by(name: "Indiana Dunes National Park"), tag: Tag.find_by(name: "sandy"))
