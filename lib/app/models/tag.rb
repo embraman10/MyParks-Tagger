@@ -18,4 +18,6 @@ class Tag < ActiveRecord::Base
         Tag.user_selection.destroy
     end
 
+    # Tag.find_by(name: ).parks
+    
 end

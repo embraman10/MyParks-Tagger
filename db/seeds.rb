@@ -21,6 +21,8 @@ parks_info.each do |park|
           url: park["url"])
     end
 end
+
+binding.pry
     
 tag_names = ["mountainous", "valley", "fun", "adventurous", "easy hikes", "difficult hikes", "family friendly", "wildlife", "waterfalls", "desert", "forest", "river", "sandy", "warm in the winter"]
 
@@ -50,59 +52,42 @@ TagAssignment.create(park: Park.find_by(name: "Bryce Canyon National Park"), tag
 TagAssignment.create(park: Park.find_by(name: "Bryce Canyon National Park"), tag: Tag.find_by(name: "warm in the winter"))
 TagAssignment.create(park: Park.find_by(name: "Cuyahoga Valley National Park"), tag: Tag.find_by(name: "river"))
 TagAssignment.create(park: Park.find_by(name: "Cuyahoga Valley National Park"), tag: Tag.find_by(name: "waterfalls"))
-TagAssignment.create(park: Park.find_by(name: ""), tag: Tag.find_by(name: ""))
-TagAssignment.create(park: Park.find_by(name: ""), tag: Tag.find_by(name: ""))
-TagAssignment.create(park: Park.find_by(name: ""), tag: Tag.find_by(name: ""))
-TagAssignment.create(park: Park.find_by(name: ""), tag: Tag.find_by(name: ""))
-TagAssignment.create(park: Park.find_by(name: ""), tag: Tag.find_by(name: ""))
-TagAssignment.create(park: Park.find_by(name: ""), tag: Tag.find_by(name: ""))
-TagAssignment.create(park: Park.find_by(name: ""), tag: Tag.find_by(name: ""))
-# ["Arches National Park",
-#  "Badlands National Park",
-#  "Big Bend National Park",
-#  "Black Canyon Of The Gunnison National Park",
-#  "Bryce Canyon National Park",
-#  "Canyonlands National Park",
-#  "Carlsbad Caverns National Park",
-#  "Crater Lake National Park",
-#  "Cuyahoga Valley National Park",
-#  "Dry Tortugas National Park",
-#  "Everglades National Park",
-#  "Gates Of The Arctic National Park & Preserve",
-#  "Gateway Arch National Park",
-#  "Glacier Bay National Park & Preserve",
-#  "Glacier National Park",
-#  "Great Basin National Park",
-#  "Great Sand Dunes National Park & Preserve",
-#  "Guadalupe Mountains National Park",
-#  "Hot Springs National Park",
-#  "Indiana Dunes National Park",
-#  "Kenai Fjords National Park",
-#  "Lassen Volcanic National Park",
-#  "Mount Rainier National Park",
-#  "Petrified Forest National Park",
-#  "Rocky Mountain National Park",
-#  "Sequoia & Kings Canyon National Parks",
-#  "Theodore Roosevelt National Park",
-#  "Virgin Islands National Park",
-#  "White Sands National Park",
-#  "Wrangell - St Elias National Park & Preserve",
-#  "Yellowstone National Park",
-#  "Yosemite National Park"]
-#TagAssignment.create({park_id: Park.ids.sample, tag_id: Tag.ids.sample})
-
-# 20.times do
-#     TagAssignment.create(tag_id: Tag.ids.sample, park_id: Park.ids.sample)
-# end
+TagAssignment.create(park: Park.find_by(name: "Arches National Park"), tag: Tag.find_by(name: "sandy"))
+TagAssignment.create(park: Park.find_by(name: "Arches National Park"), tag: Tag.find_by(name: "warm in the winter"))
+TagAssignment.create(park: Park.find_by(name: "Arches National Park"), tag: Tag.find_by(name: "easy hikes"))
+TagAssignment.create(park: Park.find_by(name: "Black Canyon Of The Gunnison National Park"), tag: Tag.find_by(name: "mountainous"))
+TagAssignment.create(park: Park.find_by(name: "Black Canyon Of The Gunnison National Park"), tag: Tag.find_by(name: "difficult hikes"))
+TagAssignment.create(park: Park.find_by(name: "Crater Lake National Park"), tag: Tag.find_by(name: "mountainous"))
+TagAssignment.create(park: Park.find_by(name: "Crater Lake National Park"), tag: Tag.find_by(name: "difficult hikes"))
+TagAssignment.create(park: Park.find_by(name: "Glacier National Park"), tag: Tag.find_by(name: "mountainous"))
+TagAssignment.create(park: Park.find_by(name: "Glacier National Park"), tag: Tag.find_by(name: "difficult hikes"))
+TagAssignment.create(park: Park.find_by(name: "Glacier National Park"), tag: Tag.find_by(name: "mountainous"))
+TagAssignment.create(park: Park.find_by(name: "Glacier National Park"), tag: Tag.find_by(name: "waterfalls"))
+TagAssignment.create(park: Park.find_by(name: "Glacier National Park"), tag: Tag.find_by(name: "lots of wildlife"))
+TagAssignment.create(park: Park.find_by(name: "Indiana Dunes National Park"), tag: Tag.find_by(name: "sandy"))
+TagAssignment.create(park: Park.find_by(name: "Indiana Dunes National Park"), tag: Tag.find_by(name: "easy hikes"))
+TagAssignment.create(park: Park.find_by(name: "Mount Rainier National Park"), tag: Tag.find_by(name: "mountainous"))
+TagAssignment.create(park: Park.find_by(name: "Mount Rainier National Park"), tag: Tag.find_by(name: "rivers"))
+TagAssignment.create(park: Park.find_by(name: "Rocky Mountain National Park"), tag: Tag.find_by(name: "mountainous"))
+TagAssignment.create(park: Park.find_by(name: "Rocky Mountain National Park"), tag: Tag.find_by(name: "difficult hikes"))
+TagAssignment.create(park: Park.find_by(name: "Rocky Mountain National Park"), tag: Tag.find_by(name: "lots of wildlife"))
+TagAssignment.create(park: Park.find_by(name: "Rocky Mountain National Park"), tag: Tag.find_by(name: "rivers"))
+TagAssignment.create(park: Park.find_by(name: "Sequoia & Kings Canyon National Parks"), tag: Tag.find_by(name: "mountainous"))
+TagAssignment.create(park: Park.find_by(name: "Sequoia & Kings Canyon National Parks"), tag: Tag.find_by(name: "valley"))
+TagAssignment.create(park: Park.find_by(name: "Sequoia & Kings Canyon National Parks"), tag: Tag.find_by(name: "difficult hikes"))
+TagAssignment.create(park: Park.find_by(name: "Yellowstone National Park"), tag: Tag.find_by(name: "lots of wildlife"))
+TagAssignment.create(park: Park.find_by(name: "Yellowstone National Park"), tag: Tag.find_by(name: "forest"))
+TagAssignment.create(park: Park.find_by(name: "Yellowstone National Park"), tag: Tag.find_by(name: "river"))
+TagAssignment.create(park: Park.find_by(name: "Yosemite National Park"), tag: Tag.find_by(name: "mountainous"))
+TagAssignment.create(park: Park.find_by(name: "Yosemite National Park"), tag: Tag.find_by(name: "valley"))
+TagAssignment.create(park: Park.find_by(name: "Yosemite National Park"), tag: Tag.find_by(name: "river"))
+TagAssignment.create(park: Park.find_by(name: "Yosemite National Park"), tag: Tag.find_by(name: "lots of wildlife"))
+TagAssignment.create(park: Park.find_by(name: "Yosemite National Park"), tag: Tag.find_by(name: "waterfalls"))
 
 #update tag
 def update_using_update_method
     tag = Tag.find_by(name: Tag.name)
     tag.update_attribute(:name, name)
 end
-
-# parks
-# yosemite = Park.new(name: "Yosemite National Park", states: "CA", description: "Not just a great valley, but a shrine to human foresight, the strength of granite, the power of glaciers, the persistence of life, and the tranquility of the High Sierra. First protected in 1864, Yosemite National Park is best known for its waterfalls, but within its nearly 1,200 square miles, you can find deep valleys, grand meadows, ancient giant sequoias, a vast wilderness area, and much more.", weatherInfo: "good weather", url: "https://www.nps.gov/state/ca/index.htm")
-# arches = Park.new(name: "Arches National Park", states: "UT", description: "Lots of red rock.", weatherInfo: "hot", url: "https://www.nps.gov/state/ut/index.htm")
 
 binding.pry
