@@ -3,7 +3,9 @@ class TagAssignment < ActiveRecord::Base
     belongs_to :tag
 
     def self.find_park_by_tag(tag_name)
-        tag_id = Tag.find {|tag| tag.name == tag_name}.id
+        tag_id = Tag.find do |tag| 
+            tag.name == tag_name
+        end.id
 
         tag_instances = TagAssignment.all.select do |tag_assignment|
             tag_assignment.tag_id == tag_id

@@ -4,7 +4,7 @@ Park.destroy_all
 Tag.destroy_all
 TagAssignment.destroy_all
 
-url = "https://developer.nps.gov/api/v1/parks?&api_key=lXfjAlHlFE71rZUicaPfOEqWGDAF6NBT7Q3OpqjC&limit=200"
+url = "https://developer.nps.gov/api/v1/parks?&api_key=lXfjAlHlFE71rZUicaPfOEqWGDAF6NBT7Q3OpqjC&limit=480"
 uri = URI(url)
 response = Net::HTTP.get(uri)
 response_hash = JSON.parse(response)

@@ -4,13 +4,13 @@ class Park < ActiveRecord::Base
 
     def list_display
         <<~PARK_DETAILS
-        --~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~--
+        --~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~
             Name: #{self.name}\n
             State: #{self.state}\n
             Description: #{self.description}\n
             Weather: #{self.weather}\n
             Visit website: #{self.url}\n
-        --~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~--
+        --~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~
         PARK_DETAILS
     end
 

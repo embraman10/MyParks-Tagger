@@ -3,7 +3,7 @@ require 'pry'
 ActiveRecord::Base.logger = nil
 PROMPT = TTY::Prompt.new
 
-#OPENING_MENU = back_to_opening
+######### OPENING_MENU #######
 user_input =  ""
 ######## PROMPTS #########################
 
@@ -16,7 +16,7 @@ def user_prompt_one
 end
 
 def user_prompt_two
-    user_selection_tags = PROMPT.select("View the tags:",Tag.names)
+    user_selection_tags = PROMPT.select("View the tags:", Tag.names)
     park_names = TagAssignment.find_park_by_tag(user_selection_tags) 
     puts park_names 
     puts "\n"
@@ -26,7 +26,7 @@ def user_prompt_two
 end
 
 def user_prompt_three
-    user_find_or_create_tags = PROMPT.ask("View and/or create tags", default: ENV["User"])
+    user_find_or_create_tags = PROMPT.ask("View and/or create tags:", default: ENV["User"])
     find_create_tags = Tag.find_or_create_by(name: user_find_or_create_tags)
     puts "#{user_find_or_create_tags} has been successfully added!"
     puts "\n"
@@ -36,7 +36,7 @@ def user_prompt_three
 end
 
 def user_prompt_four
-    user_delete_tag = PROMPT.select("Choose the tag you'd like to delete", Tag.names)
+    user_delete_tag = PROMPT.select("Choose the tag you'd like to delete:", Tag.names)
     delete_tags = Tag.delete_tag(user_delete_tag)
     puts "#{user_delete_tag} has been successfully removed!"
     puts "\n"
@@ -57,7 +57,7 @@ def user_prompt_five
 end
 
 def main_menu
-    PROMPT.select("Please select from the options below:", ["1. Explore the parks", "2. View tags", "3. Find or create tags", "4. Delete tags", "5. Tag a park", "6. Exit"])
+    PROMPT.select("Please select from the options below:", ["1. Explore the parks", "2. View tags and their associated parks", "3. Search for a tag or create a new one", "4. Delete a tag", "5. Tag a park", "6. Exit"])
 end
 
 ######################################
@@ -67,8 +67,14 @@ puts `clear`
 user_input = "main"
 #################################
 
+def greeting
+    puts "Welcome to..."
+    puts "\n"
+end
+greeting
+
 class Interface
-    font = TTY::Font.new(:standard)
+    font = TTY::Font.new("3d")
     pastel = Pastel.new
     puts pastel.green.bold(font.write("MyParks"))
     puts pastel.blue.bold(font.write("Tagger"))
@@ -76,12 +82,7 @@ end
 
 puts "\n"
 
-def greeting
-    puts "Welcome to MyParks Tagger!"
-    puts "\n"
-end
-greeting
-puts "Press press enter to get started!"
+puts "Please press enter to get started!"
 
 gets.chomp 
 puts "Loading park data..."
@@ -95,13 +96,13 @@ while user_input != "6. Exit"
     when "1. Explore the parks"
         puts `clear`
         user_input = user_prompt_one
-    when "2. View tags"
+    when "2. View tags and their associated parks"
         puts `clear`
         user_input = user_prompt_two
-    when "3. Find or create tags"
+    when "3. Search for a tag or create a new one"
         puts `clear`
         user_input = user_prompt_three
-    when "4. Delete tags"
+    when "4. Delete a tag"
         puts `clear`
         user_input = user_prompt_four
     when "5. Tag a park"
