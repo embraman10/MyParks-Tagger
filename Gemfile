@@ -9,4 +9,4 @@ gem "tty-prompt"
 gem 'tty-font'
 gem 'tty-color'
 gem 'pastel'
-gem 'tty-screen'
+gem 'lolcat'

@@ -27,8 +27,15 @@ end
 
 def user_prompt_three
     user_find_or_create_tags = PROMPT.ask("View and/or create tags:", default: ENV["User"])
-    find_create_tags = Tag.find_or_create_by(name: user_find_or_create_tags)
-    puts "#{user_find_or_create_tags} has been successfully added!"
+
+    if Tag.all.names.include? user_find_or_create_tags
+        puts "#{user_find_or_create_tags} already exists"
+    else Tag.all.names.include? user_find_or_create_tags
+        puts "#{user_find_or_create_tags} has been successfully added!"
+    end
+
+    Tag.find_or_create_by(name: user_find_or_create_tags)
+
     puts "\n"
     puts "Press enter to return to the main menu"
     gets.chomp
@@ -48,8 +55,13 @@ end
 def user_prompt_five
     user_selection_parks = PROMPT.select("Choose a park to tag:", Park.names_by_alpha)
     user_selection_tags = PROMPT.select("Choose a tag to assign:", Tag.names)
-    tag_park = TagAssignment.find_or_create_by(park: Park.find_by(name: user_selection_parks), tag: Tag.find_by(name: user_selection_tags))
-    puts "#{user_selection_parks} has been updated with the #{user_selection_tags} tag!"
+    
+    if TagAssignment.find_by(park: Park.find_by(name: user_selection_parks), tag: Tag.find_by(name: user_selection_tags))
+        puts "The #{user_selection_tags} tag already exists for #{user_selection_parks}."
+    else
+        tag_park = TagAssignment.find_or_create_by(park: Park.find_by(name: user_selection_parks), tag: Tag.find_by(name: user_selection_tags))
+        puts "#{user_selection_parks} has been updated with the #{user_selection_tags} tag!"
+    end
     puts "\n"
     puts "Press enter to return to the main menu"
     gets.chomp
