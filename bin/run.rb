@@ -47,7 +47,7 @@ end
 
 def user_prompt_five
     user_selection_parks = PROMPT.select("Choose a park to tag:", Park.names_by_alpha)
-    user_selection_tags = PROMPT.select("Choose a tag to assign:",Tag.names)
+    user_selection_tags = PROMPT.select("Choose a tag to assign:", Tag.names)
     tag_park = TagAssignment.find_or_create_by(park: Park.find_by(name: user_selection_parks), tag: Tag.find_by(name: user_selection_tags))
     puts "#{user_selection_parks} has been updated with the #{user_selection_tags} tag!"
     puts "\n"
@@ -67,16 +67,25 @@ puts `clear`
 user_input = "main"
 #################################
 
+class Interface
+    font = TTY::Font.new(:standard)
+    pastel = Pastel.new
+    puts pastel.green.bold(font.write("MyParks"))
+    puts pastel.blue.bold(font.write("Tagger"))
+end
+
+puts "\n"
+
 def greeting
     puts "Welcome to MyParks Tagger!"
     puts "\n"
 end
 greeting
-puts "Press enter to get started!"
+puts "Press press enter to get started!"
 
 gets.chomp 
 puts "Loading park data..."
-#sleep(2)
+sleep(2)
 
 while user_input != "6. Exit"
     case user_input

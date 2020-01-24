@@ -7,3 +7,6 @@ gem "pry"
 gem "require_all"
 gem "tty-prompt"
 gem 'tty-font'
+gem 'tty-color'
+gem 'pastel'
+gem 'tty-screen'

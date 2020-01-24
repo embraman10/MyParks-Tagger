@@ -3,7 +3,7 @@ class Park < ActiveRecord::Base
     has_many :tags, through: :tag_assignments
 
     def list_display
-        <<~PARK_DEETS
+        <<~PARK_DETAILS
         --~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~--
             Name: #{self.name}\n
             State: #{self.state}\n
@@ -11,7 +11,7 @@ class Park < ActiveRecord::Base
             Weather: #{self.weather}\n
             Visit website: #{self.url}\n
         --~~^^^~~--~~^^^~~--~~^^^~~--~~^^^~~--
-        PARK_DEETS
+        PARK_DETAILS
     end
 
     def self.names_by_alpha

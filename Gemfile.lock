@@ -64,12 +64,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  pastel
   pry
   require_all
   sinatra-activerecord
   sqlite3
+  tty-color
   tty-font
   tty-prompt
+  tty-screen
 
 BUNDLED WITH
    1.14.6

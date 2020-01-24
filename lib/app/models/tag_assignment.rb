@@ -14,6 +14,4 @@ class TagAssignment < ActiveRecord::Base
         end
     end
 
-
-    #validates :name, uniqueness: true
 end

@@ -22,15 +22,6 @@ parks_info.each do |park|
     end
 end
 
-binding.pry
-    
-tag_names = ["mountainous", "valley", "fun", "adventurous", "easy hikes", "difficult hikes", "family friendly", "wildlife", "waterfalls", "desert", "forest", "river", "sandy", "warm in the winter"]
-
-# tag_names.each do |tag_name| 
-#     Tag.create(name: tag_name)
-# end
-
-
 # tags 
 mountainous = Tag.create(name: "mountainous")
 valley = Tag.create(name: "valley")
@@ -82,11 +73,5 @@ TagAssignment.create(park: Park.find_by(name: "Yosemite National Park"), tag: Ta
 TagAssignment.create(park: Park.find_by(name: "Yosemite National Park"), tag: Tag.find_by(name: "river"))
 TagAssignment.create(park: Park.find_by(name: "Yosemite National Park"), tag: Tag.find_by(name: "lots of wildlife"))
 TagAssignment.create(park: Park.find_by(name: "Yosemite National Park"), tag: Tag.find_by(name: "waterfalls"))
-
-#update tag
-def update_using_update_method
-    tag = Tag.find_by(name: Tag.name)
-    tag.update_attribute(:name, name)
-end
 
 binding.pry

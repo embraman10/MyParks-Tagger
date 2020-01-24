@@ -2,8 +2,6 @@ class Tag < ActiveRecord::Base
     has_many :tag_assignments
     has_many :parks, through: :tag_assignments
 
-    # return_tag_names = Tag.all.map {|tag| tag.name}
-
     def self.names
         ordered = self.order(:name)
         ordered.map(&:name)
